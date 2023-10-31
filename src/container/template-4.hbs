@@ -1,0 +1,194 @@
+{{!-- 
+Це код container файлу для index сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+ --}}
+
+ <div class="page">
+<div class="page_content">
+    <div class="page_blok">
+    <header class="header row g-0">
+        <div class="col-3">
+       {{>logo}}
+        </div>
+
+        <nav class="header_nav col-9 ">
+           <div class="header_nav_right">
+             {{>nav list=header }}
+             </div>
+        </nav>
+    </header>
+   {{> divider}}
+   </div>
+
+   <div class="page_blok">
+    {{>hero title=hero.title  text=hero.text }}
+   </div>
+
+
+   <div class="page_blok">
+
+        <main class="row g-0 plans">
+            {{#each plans}}
+         <div class="col plans_card">
+           {{>card data=this}}
+         </div>
+
+      
+           {{/each}}
+         </main>
+
+   </div>
+
+
+   <div class="page_blok">
+    {{> divider}}
+    <footer class="row footer">
+        <div class="col-3">
+            {{>logo}}
+            <span class="footer_copiright"> Copyright 2023-2024</span>
+
+        </div>
+        {{#each footer}}
+        <div class="col-3">
+            <span class="footer_title">
+            {{title}}</span>
+            {{>nav list=links isVertical=true}}
+        </div>
+        {{/each}}
+    </footer>
+    </div>
+</div>
+ </div>
+{{!--
+<div class="page">
+<div class="page-content"> 
+    <div class="header">
+         <div class="header_logo">
+ <button type="button" class="btn-icon"> <img  class="icon-vector" src="/img/icons/vector.svg" alt=""></button>
+     
+   </div>
+       <div class="header_nav">
+        <ul class="nav">
+             <li class="nav-item">
+         <a class="nav-link" href="#">Features</a>
+         </li>
+     <li class="nav-item">
+        <a class="nav-link" href="#">Enterprise</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Support</a>
+       </li>
+        </ul>
+       </div>
+    </div>
+    <hr class="divider">
+    
+
+    <section class="frame">
+        <h1 class="title">Pricing</h1>
+        <span class="text">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's built with default Bootstrap components and utilities with little customization.</span>
+     
+    </section>
+
+   <div class="card-desk ">
+   <div class="card ">
+        <div class="card-header">
+            <h2 class="card-title">Free</h2>
+
+        </div>
+        <div class="card-body">
+            <span class="body">
+            <h3 class="body-title">$0 </h> <h3 class="title-gray">/ mo</h3>
+            </span>
+            <ul class="list-unstyled">
+                 <li class="list-item">10 users included</li>
+                 <li class="list-item">2 GB of storage</li>
+                 <li class="list-item">Email support</li>
+                 <li class="list-item">Help center access</li>
+            </ul>
+            <button type="button" class="btn btn-primary">Sign up for free</button>
+        </div>
+    </div>
+          <div class="card ">
+          <div class="card-header">
+            <h4 class="card-title">Pro</h4>
+          </div>
+               <div class="card-body">
+              <h2 class="body-title">$15</h2> <p class="title-gray">/ mo</p>
+              <ul class="list-unstyled">
+                  <li class="list-item">20 users included</li>
+                  <li class="list-item">4 GB of storage</li>
+                  <li class="list-item">Priority email support</li>
+                  <li class="list-item">Help center access</li>
+               </ul>
+               <button type="button" class="btn btn-primary">Get started</button>
+          </div>
+         </div>
+          <div class=" card ">
+             <div class="card-header">
+                <h4 class="card-title">Enterprise</h4>
+                
+            </div>
+                <div class="card-body">
+                 <h2 class="body-title">$30</h2> <p class="title-gray">/ mo</p>
+                 <ul class="list-unstyled">
+                     <li class="list-item">30 users included</li>
+                     <li class="list-item">15 GB of storage</li>
+                     <li class="list-item">Phone and email support</li>
+                     <li class="list-item">Help center access</li>
+                 </ul>
+                 <button type="button" class="btn btn-primary">Contact us</button>
+                </div>
+             
+         </div>
+   </div>
+   </section>
+
+<hr>
+
+<section class="footer">
+    <div class="col-12">
+         <div class="icon">
+     <button type="button" class="btn btn-primary"> <img src="/img/icons/vector.svg" alt=""></button>
+    <p>Copyright 2023</p>
+    </div>
+        
+    </div>
+
+    <div class="col-6">
+        <h2>Features</h2>
+        <ul class="footer-item ">
+         <a class="footer-link " href="#">Cool stuff</a>
+         <a class="footer-link" href="#">Random feature</a>
+         <a class="footer-link" href="#">Team feature</a>
+         <a class="footer-link " href="#" >Stuff for developers</a>
+        </ul>
+    </div>
+     <div class="col-6">
+     <h2>Resources</h2>
+     <ul class="footer-item ">
+      <a class="footer-link " href="#">Resource</a>
+      <a class="footer-link" href="#">Resource name</a>
+      <a class="footer-link" href="#">Another resource</a>
+      <a class="footer-link " href="#" >Final resource</a>
+     </ul>
+ </div>
+  <div class="col-6">
+     <h2>About</h2>
+     <ul class="footer-item ">
+      <a class="footer-link " href="#">Team</a>
+      <a class="footer-link" href="#">Locations</a>
+      <a class="footer-link" href="#">Privacy</a>
+      <a class="footer-link " href="#" >Terms</a>
+     </ul>
+ </div>
+</section>
+
+    </div>
+
+</div>
+}}
+{{!-- 
+    Цей код містить лише те, що буде виводитись в <body>
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
